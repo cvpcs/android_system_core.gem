@@ -19,6 +19,10 @@
 
 #include <sys/stat.h>
 
+#define DEVWAIT_TIMEOUT 10000 /* 10 seconds */
+#define DEVWAIT_POLL_TIME 50
+
+int open_uevent_socket(void);
 extern void handle_device_fd();
 extern void device_init(void);
 extern int add_dev_perms(const char *name, const char *attr,
